@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXCHYS™ — Soluções que transformam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:       #0a0a0a;
+    --off-black:   #111111;
+    --gray-900:    #1a1a1a;
+    --gray-500:    #888888;
+    --gray-300:    #cccccc;
+    --gray-100:    #f2f2f2;
+    --white:       #ffffff;
+    --purple-deep: #2d0f6b;
+    --purple-mid:  #4a22a8;
+    --purple-s:    #3b1fa8;
+    --grid-line:   rgba(0,0,0,0.045);
+    --grid-size:   52px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Merriweather', Georgia, serif;
+    background-color: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── GRID BACKGROUND ── */
+  .grid-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6vw;
+    height: 72px;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .nav-brand {
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--black);
+  }
+  .nav-brand .s { color: var(--purple-s); }
+  .nav-brand sup {
+    font-size: 0.45em;
+    vertical-align: super;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--black);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+
+  /* ── SECTIONS ── */
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 6vw 80px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-brand {
+    font-size: clamp(5rem, 16vw, 13rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--black);
+    margin-bottom: 0.05em;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.35s forwards;
+  }
+  .hero-brand .s {
+    color: var(--purple-s);
+  }
+  .hero-brand sup {
+    font-size: 0.18em;
+    vertical-align: super;
+    letter-spacing: 0;
+    font-weight: 900;
+    color: var(--black);
+  }
+
+  .hero-rule {
+    width: 1px;
+    height: 0;
+    background: var(--gray-300);
+    margin: 2.8rem auto;
+    animation: growLine 0.7s 0.8s forwards;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.25rem, 3vw, 2.1rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gray-500);
+    max-width: 580px;
+    line-height: 1.55;
+    opacity: 0;
+    animation: fadeUp 0.8s 1s forwards;
+  }
+
+  .hero-cta {
+    margin-top: 3.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.2s forwards;
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    border: 1px solid var(--black);
+    padding: 0.85rem 2.2rem;
+    transition: background 0.25s, color 0.25s;
+  }
+  .btn-ghost:hover {
+    background: var(--black);
+    color: var(--white);
+  }
+  .btn-ghost .arrow { transition: transform 0.2s; }
+  .btn-ghost:hover .arrow { transform: translateX(4px); }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 120px 6vw;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6vw;
+    align-items: start;
+    border-top: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    padding-top: 0.3rem;
+  }
+
+  .about-content h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+  .about-content h2 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gray-500);
+  }
+
+  .about-content p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.85;
+    color: #444;
+    max-width: 640px;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+  .badge {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    border: 1px solid var(--gray-300);
+    padding: 0.4rem 1rem;
+  }
+
+  /* ── PRODUCTS ── */
+  .products {
+    padding: 120px 6vw;
+    border-top: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .products-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6vw;
+    margin-bottom: 5rem;
+    align-items: end;
+  }
+
+  .products-header h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    grid-column: 2;
+  }
+  .products-header h2 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gray-500);
+  }
+  .products-header .section-label {
+    align-self: start;
+    padding-top: 0.5rem;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .product-card {
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.09);
+    padding: 3.5rem;
+    overflow: hidden;
+    background: var(--white);
+    transition: border-color 0.3s;
+    cursor: default;
+  }
+  .product-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(59,31,168,0.03) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .product-card:hover { border-color: rgba(59,31,168,0.25); }
+  .product-card:hover::before { opacity: 1; }
+
+  .product-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--gray-500);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-transform: uppercase;
+  }
+  .product-number::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gray-300);
+  }
+
+  .product-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--purple-s);
+    border: 1px solid rgba(59,31,168,0.25);
+    padding: 0.3rem 0.85rem;
+    margin-bottom: 1.8rem;
+  }
+  .product-tag .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--purple-s);
+    animation: pulse-dot 2s infinite;
+  }
+
+  .product-name {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: var(--black);
+  }
+
+  .product-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--purple-s);
+    margin-bottom: 2rem;
+  }
+
+  .product-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.85;
+    color: #555;
+    margin-bottom: 2.5rem;
+  }
+
+  .product-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 3rem;
+  }
+  .product-features li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #444;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .product-features li::before {
+    content: '—';
+    color: var(--purple-s);
+    font-weight: 300;
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--gray-100);
+    padding-top: 2rem;
+  }
+
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+  }
+  .status-pill .ring {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid var(--purple-s);
+    position: relative;
+  }
+  .status-pill .ring::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 50%;
+    background: var(--purple-s);
+    opacity: 0.5;
+    animation: pulse-inner 2s infinite;
+  }
+
+  .product-arrow {
+    width: 38px; height: 38px;
+    border: 1px solid var(--gray-300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    font-size: 1rem;
+    transition: all 0.25s;
+    cursor: not-allowed;
+  }
+
+  /* ── MANIFESTO ── */
+  .manifesto {
+    padding: 140px 6vw;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6vw;
+    align-items: start;
+  }
+
+  .manifesto blockquote {
+    font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--off-black);
+    grid-column: 2;
+    position: relative;
+  }
+  .manifesto blockquote::before {
+    content: '\201C';
+    position: absolute;
+    left: -0.55em;
+    top: -0.15em;
+    font-size: 3em;
+    color: var(--gray-300);
+    line-height: 1;
+    font-weight: 900;
+    font-style: normal;
+  }
+  .manifesto blockquote cite {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-top: 2rem;
+  }
+  .manifesto blockquote cite::before {
+    content: '— ';
+  }
+  .manifesto .section-label { grid-column: 1; grid-row: 1; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid rgba(0,0,0,0.07);
+    padding: 4rem 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-brand {
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--black);
+  }
+  .footer-brand .s { color: var(--purple-s); }
+  .footer-brand sup {
+    font-size: 0.4em;
+    vertical-align: super;
+    font-weight: 700;
+  }
+
+  .footer-copy {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--gray-500);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes growLine {
+    from { height: 0; }
+    to   { height: 64px; }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.7); }
+  }
+  @keyframes pulse-inner {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50%       { transform: scale(0); opacity: 0; }
+  }
+
+  /* scroll reveals */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.32s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .about, .products-header, .manifesto {
+      grid-template-columns: 1fr;
+    }
+    .products-grid { grid-template-columns: 1fr; }
+    .products-header h2 { grid-column: 1; }
+    .manifesto blockquote { grid-column: 1; }
+    .manifesto blockquote::before { display: none; }
+    .nav-links { display: none; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .product-card { padding: 2.5rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-brand">AXCHY<span class="s">S</span><sup>TM</sup></a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#manifesto">Manifesto</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="inicio">
+  <p class="hero-eyebrow">Software · Inovação · Excelência</p>
+  <h1 class="hero-brand">AXCHY<span class="s">S</span><sup>TM</sup></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-tagline">Soluções construídas com precisão para quem não aceita o suficiente.</p>
+  <div class="hero-cta">
+    <a href="#produtos" class="btn-ghost">
+      Conheça os produtos <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ── SOBRE ── -->
+<section class="about" id="sobre">
+  <div>
+    <span class="section-label reveal">Sobre a AXCHYS</span>
+  </div>
+  <div class="about-content">
+    <h2 class="reveal">Tecnologia que <em>respeita</em><br>quem a usa.</h2>
+    <p class="reveal reveal-delay-1">
+      A AXCHYS nasce da convicção de que bom software não é aquele que impressiona numa demo —
+      é aquele que desaparece no fluxo de trabalho de quem depende dele todos os dias.
+      Cada produto é pensado do zero, com atenção obsessiva aos detalhes que a maioria ignora.
+    </p>
+    <p class="reveal reveal-delay-2">
+      Operamos em dois universos distintos — infraestrutura de TI e gestão empresarial —
+      porque acreditamos que as maiores ineficiências vivem exatamente nessa fronteira entre
+      técnica e gestão. É lá que construímos.
+    </p>
+    <div class="about-badges reveal reveal-delay-3">
+      <span class="badge">Infraestrutura de TI</span>
+      <span class="badge">Gestão Empresarial</span>
+      <span class="badge">Software sob medida</span>
+      <span class="badge">Em desenvolvimento ativo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUTOS ── -->
+<section class="products" id="produtos">
+  <div class="products-header">
+    <span class="section-label reveal">Portfólio</span>
+    <h2 class="reveal">Dois produtos.<br><em>Um padrão.</em></h2>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- CARD 1: Manutenção -->
+    <div class="product-card reveal">
+      <div class="product-number">01</div>
+      <span class="product-tag"><span class="dot"></span>Em desenvolvimento</span>
+      <h3 class="product-name">Manutenção</h3>
+      <p class="product-subtitle">Para equipes de TI</p>
+      <p class="product-desc">
+        Sistema interno completo de chamados, inventário e monitoramento de infraestrutura.
+        Do ticket aberto ao equipamento inventariado — tudo num único painel,
+        construído para o ritmo real de quem suporta uma rede.
+      </p>
+      <ul class="product-features">
+        <li>Dashboard de chamados com integração SQL Server</li>
+        <li>Inventário de computadores, impressoras e nobreaks</li>
+        <li>Monitoramento de telas em tempo real (720p · 60 fps)</li>
+        <li>Cadastro completo de periféricos com preview SVG</li>
+        <li>Tema claro / escuro com painel de opções por usuário</li>
+      </ul>
+      <div class="product-footer">
+        <div class="status-pill">
+          <div class="ring"></div>
+          Refatoração em andamento
+        </div>
+        <div class="product-arrow" title="Em breve">→</div>
+      </div>
+    </div>
+
+    <!-- CARD 2: 3Q -->
+    <div class="product-card reveal reveal-delay-2">
+      <div class="product-number">02</div>
+      <span class="product-tag"><span class="dot"></span>Em desenvolvimento</span>
+      <h3 class="product-name">3Q</h3>
+      <p class="product-subtitle">Para empresas e equipes</p>
+      <p class="product-desc">
+        Plataforma de gestão corporativa que une tarefas, metas, reuniões e
+        rotinas numa hierarquia clara. Feita para que cada nível da organização
+        saiba exatamente o que precisa fazer — e quando.
+      </p>
+      <ul class="product-features">
+        <li>Gestão de tarefas com delegação e prazos</li>
+        <li>Metas com sub-metas e acompanhamento de progresso</li>
+        <li>Reuniões com geração automática de atas</li>
+        <li>Rotinas e checklist por setor e hierarquia</li>
+        <li>Controle de acesso por cargo e organograma</li>
+      </ul>
+      <div class="product-footer">
+        <div class="status-pill">
+          <div class="ring"></div>
+          Replanejamento de interface
+        </div>
+        <div class="product-arrow" title="Em breve">→</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- nota discreta -->
+  <p style="font-family:'Cormorant Garamond',serif; font-size:0.88rem; color:var(--gray-500); text-align:center; margin-top:3rem; letter-spacing:0.06em;" class="reveal">
+    Ambos os produtos encontram-se em fase ativa de desenvolvimento e revisão.<br>
+    Lançamentos serão comunicados diretamente.
+  </p>
+</section>
+
+<!-- ── MANIFESTO ── -->
+<section class="manifesto" id="manifesto">
+  <span class="section-label reveal">Filosofia</span>
+  <blockquote class="reveal reveal-delay-1">
+    Não construímos software para impressionar em apresentações.
+    Construímos para resistir ao uso diário —
+    o tipo de ferramenta que ninguém percebe quando funciona,
+    e todo mundo sente falta quando some.
+    <cite>AXCHYS — Princípios de produto</cite>
+  </blockquote>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-brand">AXCHY<span class="s">S</span><sup>TM</sup></div>
+  <p class="footer-copy">© 2025 AXCHYS. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? '#0a0a0a' : '';
+    });
+  });
+</script>
+</body>
+</html>
