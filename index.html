@@ -19,14 +19,14 @@
     --purple-deep: #2d0f6b;
     --purple-mid:  #4a22a8;
     --purple-s:    #3b1fa8;
+    --wapp:        #3b1fa8;
+    --wapp-light:  rgba(59,31,168,0.05);
     --grid-line:   rgba(0,0,0,0.045);
     --grid-size:   52px;
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Merriweather', Georgia, serif;
     background-color: var(--white);
@@ -62,7 +62,6 @@
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0,0,0,0.06);
   }
-
   .nav-brand {
     font-size: 1.15rem;
     font-weight: 900;
@@ -72,19 +71,8 @@
     color: var(--black);
   }
   .nav-brand .s { color: var(--purple-s); }
-  .nav-brand sup {
-    font-size: 0.45em;
-    vertical-align: super;
-    font-weight: 700;
-    letter-spacing: 0;
-    color: var(--black);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
+  .nav-brand sup { font-size: 0.45em; vertical-align: super; font-weight: 700; letter-spacing: 0; color: var(--black); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.95rem;
@@ -98,10 +86,7 @@
   .nav-links a:hover { color: var(--black); }
 
   /* ── SECTIONS ── */
-  section {
-    position: relative;
-    z-index: 1;
-  }
+  section { position: relative; z-index: 1; }
 
   /* ── HERO ── */
   .hero {
@@ -113,7 +98,6 @@
     text-align: center;
     padding: 120px 6vw 80px;
   }
-
   .hero-eyebrow {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.78rem;
@@ -125,7 +109,6 @@
     opacity: 0;
     animation: fadeUp 0.8s 0.2s forwards;
   }
-
   .hero-brand {
     font-size: clamp(5rem, 16vw, 13rem);
     font-weight: 900;
@@ -136,25 +119,14 @@
     opacity: 0;
     animation: fadeUp 0.9s 0.35s forwards;
   }
-  .hero-brand .s {
-    color: var(--purple-s);
-  }
-  .hero-brand sup {
-    font-size: 0.18em;
-    vertical-align: super;
-    letter-spacing: 0;
-    font-weight: 900;
-    color: var(--black);
-  }
-
+  .hero-brand .s { color: var(--purple-s); }
+  .hero-brand sup { font-size: 0.18em; vertical-align: super; letter-spacing: 0; font-weight: 900; color: var(--black); }
   .hero-rule {
-    width: 1px;
-    height: 0;
+    width: 1px; height: 0;
     background: var(--gray-300);
     margin: 2.8rem auto;
     animation: growLine 0.7s 0.8s forwards;
   }
-
   .hero-tagline {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.25rem, 3vw, 2.1rem);
@@ -166,13 +138,11 @@
     opacity: 0;
     animation: fadeUp 0.8s 1s forwards;
   }
-
   .hero-cta {
     margin-top: 3.5rem;
     opacity: 0;
     animation: fadeUp 0.8s 1.2s forwards;
   }
-
   .btn-ghost {
     display: inline-flex;
     align-items: center;
@@ -188,10 +158,7 @@
     padding: 0.85rem 2.2rem;
     transition: background 0.25s, color 0.25s;
   }
-  .btn-ghost:hover {
-    background: var(--black);
-    color: var(--white);
-  }
+  .btn-ghost:hover { background: var(--black); color: var(--white); }
   .btn-ghost .arrow { transition: transform 0.2s; }
   .btn-ghost:hover .arrow { transform: translateX(4px); }
 
@@ -204,7 +171,6 @@
     align-items: start;
     border-top: 1px solid rgba(0,0,0,0.07);
   }
-
   .section-label {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.72rem;
@@ -214,7 +180,6 @@
     color: var(--gray-500);
     padding-top: 0.3rem;
   }
-
   .about-content h2 {
     font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 700;
@@ -222,12 +187,7 @@
     letter-spacing: -0.02em;
     margin-bottom: 2rem;
   }
-  .about-content h2 em {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--gray-500);
-  }
-
+  .about-content h2 em { font-style: italic; font-weight: 300; color: var(--gray-500); }
   .about-content p {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2rem;
@@ -237,13 +197,7 @@
     max-width: 640px;
     margin-bottom: 1.5rem;
   }
-
-  .about-badges {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-top: 2.5rem;
-  }
+  .about-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2.5rem; }
   .badge {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.8rem;
@@ -259,7 +213,6 @@
     padding: 120px 6vw;
     border-top: 1px solid rgba(0,0,0,0.07);
   }
-
   .products-header {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -267,7 +220,6 @@
     margin-bottom: 5rem;
     align-items: end;
   }
-
   .products-header h2 {
     font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 700;
@@ -275,15 +227,8 @@
     letter-spacing: -0.02em;
     grid-column: 2;
   }
-  .products-header h2 em {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--gray-500);
-  }
-  .products-header .section-label {
-    align-self: start;
-    padding-top: 0.5rem;
-  }
+  .products-header h2 em { font-style: italic; font-weight: 300; color: var(--gray-500); }
+  .products-header .section-label { align-self: start; padding-top: 0.5rem; }
 
   .products-grid {
     display: grid;
@@ -323,12 +268,7 @@
     gap: 1rem;
     text-transform: uppercase;
   }
-  .product-number::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--gray-300);
-  }
+  .product-number::after { content: ''; flex: 1; height: 1px; background: var(--gray-300); }
 
   .product-tag {
     display: inline-flex;
@@ -358,7 +298,6 @@
     margin-bottom: 1rem;
     color: var(--black);
   }
-
   .product-subtitle {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.85rem;
@@ -368,7 +307,6 @@
     color: var(--purple-s);
     margin-bottom: 2rem;
   }
-
   .product-desc {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.15rem;
@@ -378,12 +316,30 @@
     margin-bottom: 2.5rem;
   }
 
+  /* Feature groups */
+  .feature-group {
+    margin-bottom: 2rem;
+  }
+  .feature-group-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .feature-group-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-100); }
+
   .product-features {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
-    margin-bottom: 3rem;
+    gap: 0.65rem;
+    margin-bottom: 0;
   }
   .product-features li {
     font-family: 'Cormorant Garamond', serif;
@@ -393,6 +349,7 @@
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
+    line-height: 1.5;
   }
   .product-features li::before {
     content: '—';
@@ -402,14 +359,51 @@
     margin-top: 0.05em;
   }
 
+  /* WhatsApp integration block */
+  .wapp-block {
+    margin-top: 2.5rem;
+    border: 1px solid rgba(59,31,168,0.2);
+    background: var(--wapp-light);
+    padding: 1.8rem 2rem;
+    position: relative;
+  }
+  .wapp-block::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--purple-s);
+  }
+  .wapp-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--purple-s);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .wapp-icon {
+    width: 14px; height: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wapp-icon svg { width: 14px; height: 14px; fill: var(--purple-s); }
+  .wapp-block .product-features li { color: #3b2a6e; }
+  .wapp-block .product-features li::before { color: var(--purple-s); }
+
   .product-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid var(--gray-100);
     padding-top: 2rem;
+    margin-top: 2.5rem;
   }
-
   .status-pill {
     display: flex;
     align-items: center;
@@ -435,7 +429,6 @@
     opacity: 0.5;
     animation: pulse-inner 2s infinite;
   }
-
   .product-arrow {
     width: 38px; height: 38px;
     border: 1px solid var(--gray-300);
@@ -448,6 +441,85 @@
     cursor: not-allowed;
   }
 
+  /* ── WHATSAPP SECTION ── */
+  .wapp-section {
+    padding: 120px 6vw;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    background: linear-gradient(to bottom, rgba(59,31,168,0.025), transparent);
+  }
+  .wapp-section-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 6vw;
+    margin-bottom: 5rem;
+    align-items: end;
+  }
+  .wapp-section-header h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    grid-column: 2;
+  }
+  .wapp-section-header h2 em { font-style: italic; font-weight: 300; color: var(--gray-500); }
+
+  .wapp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .wapp-card {
+    border: 1px solid rgba(59,31,168,0.12);
+    padding: 2.5rem;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .wapp-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--purple-s);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .wapp-card:hover { border-color: rgba(59,31,168,0.35); }
+  .wapp-card:hover::before { opacity: 1; }
+
+  .wapp-card-icon {
+    width: 40px; height: 40px;
+    border: 1px solid rgba(59,31,168,0.25);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .wapp-card-icon svg { width: 18px; height: 18px; fill: var(--purple-s); }
+  .wapp-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+  }
+  .wapp-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #555;
+  }
+  .wapp-card-tag {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--purple-s);
+    border: 1px solid rgba(59,31,168,0.3);
+    padding: 0.25rem 0.65rem;
+    margin-bottom: 1rem;
+  }
+
   /* ── MANIFESTO ── */
   .manifesto {
     padding: 140px 6vw;
@@ -457,7 +529,6 @@
     gap: 6vw;
     align-items: start;
   }
-
   .manifesto blockquote {
     font-size: clamp(1.5rem, 3.5vw, 2.6rem);
     font-weight: 300;
@@ -471,8 +542,7 @@
   .manifesto blockquote::before {
     content: '\201C';
     position: absolute;
-    left: -0.55em;
-    top: -0.15em;
+    left: -0.55em; top: -0.15em;
     font-size: 3em;
     color: var(--gray-300);
     line-height: 1;
@@ -490,9 +560,7 @@
     color: var(--gray-500);
     margin-top: 2rem;
   }
-  .manifesto blockquote cite::before {
-    content: '— ';
-  }
+  .manifesto blockquote cite::before { content: '— '; }
   .manifesto .section-label { grid-column: 1; grid-row: 1; }
 
   /* ── FOOTER ── */
@@ -503,20 +571,9 @@
     align-items: center;
     justify-content: space-between;
   }
-
-  .footer-brand {
-    font-size: 1.4rem;
-    font-weight: 900;
-    letter-spacing: 0.04em;
-    color: var(--black);
-  }
+  .footer-brand { font-size: 1.4rem; font-weight: 900; letter-spacing: 0.04em; color: var(--black); }
   .footer-brand .s { color: var(--purple-s); }
-  .footer-brand sup {
-    font-size: 0.4em;
-    vertical-align: super;
-    font-weight: 700;
-  }
-
+  .footer-brand sup { font-size: 0.4em; vertical-align: super; font-weight: 700; }
   .footer-copy {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.85rem;
@@ -543,32 +600,27 @@
     50%       { transform: scale(0); opacity: 0; }
   }
 
-  /* scroll reveals */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
     transition: opacity 0.75s ease, transform 0.75s ease;
   }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.32s; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    .about, .products-header, .manifesto {
-      grid-template-columns: 1fr;
-    }
-    .products-grid { grid-template-columns: 1fr; }
-    .products-header h2 { grid-column: 1; }
+    .about, .products-header, .manifesto, .wapp-section-header { grid-template-columns: 1fr; }
+    .products-grid, .wapp-grid { grid-template-columns: 1fr; }
+    .products-header h2, .wapp-section-header h2 { grid-column: 1; }
     .manifesto blockquote { grid-column: 1; }
     .manifesto blockquote::before { display: none; }
     .nav-links { display: none; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
     .product-card { padding: 2.5rem 2rem; }
+    .wapp-card { padding: 2rem 1.5rem; }
   }
 </style>
 </head>
@@ -582,6 +634,7 @@
   <ul class="nav-links">
     <li><a href="#sobre">Sobre</a></li>
     <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#whatsapp">WhatsApp</a></li>
     <li><a href="#manifesto">Manifesto</a></li>
   </ul>
 </nav>
@@ -613,11 +666,13 @@
     <p class="reveal reveal-delay-2">
       Operamos em dois universos distintos — infraestrutura de TI e gestão empresarial —
       porque acreditamos que as maiores ineficiências vivem exatamente nessa fronteira entre
-      técnica e gestão. É lá que construímos.
+      técnica e gestão. É lá que construímos. E agora, com integração nativa ao WhatsApp,
+      trazemos as ferramentas para onde as pessoas já estão.
     </p>
     <div class="about-badges reveal reveal-delay-3">
       <span class="badge">Infraestrutura de TI</span>
       <span class="badge">Gestão Empresarial</span>
+      <span class="badge">Integração WhatsApp</span>
       <span class="badge">Software sob medida</span>
       <span class="badge">Em desenvolvimento ativo</span>
     </div>
@@ -642,15 +697,76 @@
       <p class="product-desc">
         Sistema interno completo de chamados, inventário e monitoramento de infraestrutura.
         Do ticket aberto ao equipamento inventariado — tudo num único painel,
-        construído para o ritmo real de quem suporta uma rede.
+        construído para o ritmo real de quem suporta uma rede corporativa.
       </p>
-      <ul class="product-features">
-        <li>Dashboard de chamados com integração SQL Server</li>
-        <li>Inventário de computadores, impressoras e nobreaks</li>
-        <li>Monitoramento de telas em tempo real (720p · 60 fps)</li>
-        <li>Cadastro completo de periféricos com preview SVG</li>
-        <li>Tema claro / escuro com painel de opções por usuário</li>
-      </ul>
+
+      <div class="feature-group">
+        <div class="feature-group-label">Chamados & Dashboard</div>
+        <ul class="product-features">
+          <li>Dashboard de chamados com integração direta ao SQL Server</li>
+          <li>Consulta por intervalo de datas com filtros avançados</li>
+          <li>Histórico completo de atendimentos por setor e técnico</li>
+          <li>Resposta e encerramento de chamados pelo sistema</li>
+        </ul>
+      </div>
+
+      <div class="feature-group">
+        <div class="feature-group-label">Inventário de Hardware</div>
+        <ul class="product-features">
+          <li>Cadastro completo de computadores por setor com hostname e MAC</li>
+          <li>Gerenciamento de impressoras — laser, jato de tinta, matricial, térmica, multifuncional</li>
+          <li>Cadastro de nobreaks com VA, wattagem, status de bateria e tensão</li>
+          <li>Periféricos por máquina: até 3 monitores com polegadas, conexão e touch</li>
+          <li>Mouse, teclado e impressoras vinculadas a cada estação</li>
+          <li>Preview SVG dinâmico do setup completo de cada computador</li>
+          <li>Campos de IP local, MAC, número de série e observações técnicas</li>
+        </ul>
+      </div>
+
+      <div class="feature-group">
+        <div class="feature-group-label">Monitoramento em Tempo Real</div>
+        <ul class="product-features">
+          <li>Streaming de telas via MJPEG — 720p a 60 FPS estável</li>
+          <li>Suporte a 1080p em redes gigabit com configuração de variáveis de ambiente</li>
+          <li>Buffer TCP de 4 MB com codec JPEG otimizado para rede corporativa</li>
+          <li>Agente leve instalado nas estações (Python, execução em background)</li>
+          <li>Painel Veyon multi-tela para acompanhar toda a rede de uma vez</li>
+        </ul>
+      </div>
+
+      <div class="feature-group">
+        <div class="feature-group-label">Experiência & Personalização</div>
+        <ul class="product-features">
+          <li>Tema claro / escuro com alternância via atalho Ctrl+Q</li>
+          <li>Painel de opções individual por usuário (navegação e visibilidade de módulos)</li>
+          <li>Cor de destaque personalizável — atualiza efeitos, sombras, badges e destaques</li>
+          <li>Som de clique ativável por usuário via arquivo MP3 personalizado</li>
+          <li>Configurações salvas em localStorage — independentes por pessoa</li>
+        </ul>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="wapp-block">
+        <div class="wapp-label">
+          <span class="wapp-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </span>
+          Integração WhatsApp
+        </div>
+        <ul class="product-features">
+          <li>Abertura de chamados direto pelo WhatsApp — o usuário descreve o problema, o ticket é criado automaticamente</li>
+          <li>Notificações de status em tempo real: chamado recebido, em atendimento, encerrado</li>
+          <li>Alertas automáticos quando nobreak entra em estado crítico de bateria</li>
+          <li>Consulta de inventário pelo chat — "qual o IP da impressora do RH?"</li>
+          <li>Solicitação de acesso remoto à tela via WhatsApp pelo número da máquina ou do setor</li>
+          <li>Notificação para técnico quando novo chamado é aberto em seu setor</li>
+          <li>Relatório diário de chamados abertos/fechados enviado automaticamente</li>
+          <li>Comando de urgência — prioridade máxima disparada por mensagem</li>
+        </ul>
+      </div>
+
       <div class="product-footer">
         <div class="status-pill">
           <div class="ring"></div>
@@ -669,19 +785,87 @@
       <p class="product-desc">
         Plataforma de gestão corporativa que une tarefas, metas, reuniões e
         rotinas numa hierarquia clara. Feita para que cada nível da organização
-        saiba exatamente o que precisa fazer — e quando.
+        saiba exatamente o que precisa fazer — e quando fazer.
       </p>
-      <ul class="product-features">
-        <li>Gestão de tarefas com delegação e prazos</li>
-        <li>Metas com sub-metas e acompanhamento de progresso</li>
-        <li>Reuniões com geração automática de atas</li>
-        <li>Rotinas e checklist por setor e hierarquia</li>
-        <li>Controle de acesso por cargo e organograma</li>
-      </ul>
+
+      <div class="feature-group">
+        <div class="feature-group-label">Tarefas & Delegação</div>
+        <ul class="product-features">
+          <li>Criação e delegação de tarefas com prazos e responsáveis definidos</li>
+          <li>Acompanhamento de status em tempo real por gestor e executor</li>
+          <li>Histórico completo de alterações e comentários por tarefa</li>
+          <li>Prioridades, tags e filtros por setor, pessoa ou prazo</li>
+          <li>Dashboard com visão geral de todas as tarefas da equipe</li>
+        </ul>
+      </div>
+
+      <div class="feature-group">
+        <div class="feature-group-label">Metas & Resultados</div>
+        <ul class="product-features">
+          <li>Metas corporativas com sub-metas encadeadas por hierarquia</li>
+          <li>Barra de progresso visual com atualização em tempo real</li>
+          <li>Vinculação de tarefas a metas — cada entrega conta no resultado</li>
+          <li>Relatórios de performance por setor, período e responsável</li>
+        </ul>
+      </div>
+
+      <div class="feature-group">
+        <div class="feature-group-label">Reuniões & Atas</div>
+        <ul class="product-features">
+          <li>Agendamento de reuniões com participantes e pauta predefinida</li>
+          <li>Geração automática de atas com itens discutidos e decisões tomadas</li>
+          <li>Atas com controle de acesso — visíveis apenas para cargos autorizados</li>
+          <li>Registro de encaminhamentos com responsáveis e prazos diretamente da ata</li>
+        </ul>
+      </div>
+
+      <div class="feature-group">
+        <div class="feature-group-label">Rotinas & Checklists</div>
+        <ul class="product-features">
+          <li>Rotinas e checklists diários/semanais por setor e cargo</li>
+          <li>Confirmação de execução com registro de horário e responsável</li>
+          <li>Alertas automáticos para rotinas não realizadas no prazo</li>
+        </ul>
+      </div>
+
+      <div class="feature-group">
+        <div class="feature-group-label">Organização & Acesso</div>
+        <ul class="product-features">
+          <li>Controle de acesso por cargo — organograma define o que cada um vê e faz</li>
+          <li>Autenticação segura com sessão protegida por usuário</li>
+          <li>Múltiplos setores e hierarquias numa mesma organização</li>
+          <li>Tema claro e escuro com preferência salva por usuário</li>
+          <li>Construído com React + TypeScript + Tailwind — leve e responsivo</li>
+        </ul>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="wapp-block">
+        <div class="wapp-label">
+          <span class="wapp-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </span>
+          Integração WhatsApp
+        </div>
+        <ul class="product-features">
+          <li>Criação de tarefas pelo WhatsApp — "cria tarefa para João: revisar relatório até sexta"</li>
+          <li>Agendamento de reuniões pelo chat — data, hora e participantes configurados por mensagem</li>
+          <li>Recebimento de alertas de tarefas vencidas e metas em atraso direto no celular</li>
+          <li>Aprovação ou rejeição de tarefas delegadas respondendo diretamente no WhatsApp</li>
+          <li>Check-in de rotinas — "rotina concluída" registrado sem abrir o sistema</li>
+          <li>Envio automático de atas de reunião para todos os participantes após o encerramento</li>
+          <li>Consulta de status — "qual o progresso da meta do setor comercial?"</li>
+          <li>Lembrete automático de prazos chegando — 24h e 1h antes do vencimento</li>
+          <li>Notificação imediata quando uma tarefa é delegada para você</li>
+        </ul>
+      </div>
+
       <div class="product-footer">
         <div class="status-pill">
           <div class="ring"></div>
-          Replanejamento de interface
+          Reconstrução em andamento
         </div>
         <div class="product-arrow" title="Em breve">→</div>
       </div>
@@ -689,10 +873,80 @@
 
   </div>
 
-  <!-- nota discreta -->
   <p style="font-family:'Cormorant Garamond',serif; font-size:0.88rem; color:var(--gray-500); text-align:center; margin-top:3rem; letter-spacing:0.06em;" class="reveal">
     Ambos os produtos encontram-se em fase ativa de desenvolvimento e revisão.<br>
     Lançamentos serão comunicados diretamente.
+  </p>
+</section>
+
+<!-- ── WHATSAPP SECTION ── -->
+<section class="wapp-section" id="whatsapp">
+  <div class="wapp-section-header">
+    <span class="section-label reveal" style="color: var(--purple-s);">Integração WhatsApp</span>
+    <h2 class="reveal">O sistema vai até<br><em>onde as pessoas já estão.</em></h2>
+  </div>
+
+  <div class="wapp-grid">
+
+    <div class="wapp-card reveal">
+      <div class="wapp-card-tag">Chamados</div>
+      <div class="wapp-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+      </div>
+      <h3>Abrir chamados sem sair do chat</h3>
+      <p>O usuário descreve o problema no WhatsApp pelo número de suporte e o ticket é criado, categorizado e atribuído automaticamente — sem formulários, sem sistemas abertos.</p>
+    </div>
+
+    <div class="wapp-card reveal reveal-delay-1">
+      <div class="wapp-card-tag">Notificações</div>
+      <div class="wapp-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6V11c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+      </div>
+      <h3>Alertas que chegam antes do problema</h3>
+      <p>Nobreak em estado crítico, meta em atraso, tarefa vencida, rotina não realizada — tudo notificado no WhatsApp antes de virar problema, para quem precisa agir.</p>
+    </div>
+
+    <div class="wapp-card reveal reveal-delay-2">
+      <div class="wapp-card-tag">Agendamento</div>
+      <div class="wapp-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+      </div>
+      <h3>Marcar reuniões pelo WhatsApp</h3>
+      <p>Envie a data, hora e participantes pelo chat. O sistema confirma disponibilidade, registra a reunião no 3Q e notifica todos os envolvidos automaticamente com lembrete no dia.</p>
+    </div>
+
+    <div class="wapp-card reveal">
+      <div class="wapp-card-tag">Tarefas</div>
+      <div class="wapp-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      </div>
+      <h3>Criar e aprovar tarefas por mensagem</h3>
+      <p>Delegue, aprove, rejeite e acompanhe tarefas inteiras pelo WhatsApp. Responda "aprovado" ou "ajustar" e o sistema atualiza o status e notifica o responsável — sem abrir nenhum app.</p>
+    </div>
+
+    <div class="wapp-card reveal reveal-delay-1">
+      <div class="wapp-card-tag">Inventário</div>
+      <div class="wapp-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.34C18 2.99 16.01 1 13.66 1c-1.3 0-2.51.56-3.36 1.44C9.41 1.56 8.2 1 6.9 1 4.55 1 2.56 2.99 2.56 4.66c0 .46.1.9.18 1.34H1c-.56 0-1 .45-1 1v3c0 .56.44 1 1 1h.29L3 21.44C3.09 22.33 3.84 23 4.73 23h14.54c.89 0 1.64-.67 1.73-1.56L22.71 11H23c.55 0 1-.44 1-1V7c0-.55-.45-1-1-1z"/></svg>
+      </div>
+      <h3>Consultar inventário pelo chat</h3>
+      <p>Pergunte "qual o IP da impressora do RH?" ou "quais nobreaks precisam de atenção?" e receba a resposta em segundos, sem precisar abrir o sistema de manutenção.</p>
+    </div>
+
+    <div class="wapp-card reveal reveal-delay-2">
+      <div class="wapp-card-tag">Rotinas</div>
+      <div class="wapp-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      </div>
+      <h3>Check-in de rotinas sem abrir o sistema</h3>
+      <p>O colaborador envia "rotina ok" pelo WhatsApp e o check-in é registrado com horário e usuário. Rotinas não confirmadas geram alerta automático para o gestor.</p>
+    </div>
+
+  </div>
+
+  <p style="font-family:'Cormorant Garamond',serif; font-size:0.88rem; color:var(--gray-500); text-align:center; margin-top:3rem; letter-spacing:0.06em;" class="reveal">
+    A integração WhatsApp funciona via número dedicado fornecido no momento da implantação.<br>
+    Compatível com WhatsApp Business API — sem exposição de número pessoal.
   </p>
 </section>
 
@@ -724,10 +978,10 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // Smooth nav highlight
+  // Nav highlight
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
